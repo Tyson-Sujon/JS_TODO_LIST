@@ -16,6 +16,5 @@ addBtn.addEventListener("click", () => {
 taskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     console.log("Enter pressed:", taskInput.value);
-    console.log(" valo");
   }
 });
