@@ -18,3 +18,12 @@ taskInput.addEventListener("keydown", (event) => {
     console.log("Enter pressed:", taskInput.value);
   }
 });
+
+//create element
+let li=document.createElement('li');
+li.textContent='learn js';
+taskList.appendChild(li);
+
+console.log(li);
+
+
