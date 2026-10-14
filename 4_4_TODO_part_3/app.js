@@ -10,20 +10,21 @@ console.log(taskInput, addBtn, taskList);
 // });
 
 addBtn.addEventListener("click", () => {
-  console.log(taskInput.value);
+  let li = document.createElement("li");
+  li.textContent = taskInput.value;
+  taskList.appendChild(li);
 });
 
 taskInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    console.log("Enter pressed:", taskInput.value);
+    const li = document.createElement("li");
+    li.textContent = taskInput.value;
   }
 });
 
 //create element
-let li=document.createElement('li');
-li.textContent='learn js';
-taskList.appendChild(li);
+// let li=document.createElement('li');
+// li.textContent='learn js';
+// taskList.appendChild(li);
 
 console.log(li);
-
-
