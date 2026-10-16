@@ -13,9 +13,17 @@ function render() {
 
         let spen=document.createElement('spen')
         spen.classList.add('task-text');
-        spen.textContent=task.text;
+        spen.textContent=task.text;    
 
         let div=document.createElement('div');
+        buttonWrapper.classList.add('task-button');
         
+        let cmpltBtn = document.createElement('button');
+        cmpltBtn.textContent= '✅'
+
+        let deleteBtn=document.createElement('button');
+        deleteBtn.cmpltBtn.textContent= '❌'
     });
 }
+
+// 6:43
