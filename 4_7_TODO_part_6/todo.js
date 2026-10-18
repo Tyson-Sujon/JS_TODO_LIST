@@ -13,13 +13,17 @@ function render() {
 
     let span = document.createElement("span");
     span.classList.add("task-text");
-    span.textContent = task.text;
+    span.textContent = task.text `task: ${task.text} completed: ${task.completed}`;
 
     let buttonWrapper = document.createElement("div");
-    buttonWrapper.classList.add("task-button");
+    buttonWrapper.classList.add("task-buttons");
 
     let cmpltBtn = document.createElement("button");
     cmpltBtn.textContent = "✅";
+
+    cmpltBtn.addEventListener('click', ()=>{
+      completeTask(task.id);
+    })
 
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
@@ -47,3 +51,11 @@ function addTask() {
   render();
 }
 addBtn.addEventListener("click", addTask);
+
+
+function completeTask(id) {
+  let task=tasks.find((task) =>task.id==id);
+  task.completed = !task.completed;
+  // task.classList.add('completed');
+  render();
+}
