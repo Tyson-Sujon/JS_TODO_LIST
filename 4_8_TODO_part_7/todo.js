@@ -27,6 +27,9 @@ function render() {
 
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
+    deleteBtn.addEventListener("click", () => {
+      deleteTask(task.id);
+    });
     buttonWrapper.appendChild(cmpltBtn);
     buttonWrapper.appendChild(deleteBtn);
     li.appendChild(span);
@@ -56,5 +59,13 @@ function completeTask(id) {
   let task = tasks.find((task) => task.id == id);
   task.completed = !task.completed;
   // task.classList.add('completed');
+  render();
+}
+
+// deleteTask(task.id);
+
+function deleteTask(id) {
+  tasks = tasks.filter((task) => task.id != id);
+  // task.completed = !task.completed;
   render();
 }
